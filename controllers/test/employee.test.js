@@ -16,7 +16,7 @@ describe('Employee Management', function() {
   });
 
   after(async function() {
-    await client.end();
+    await client.end(); 
   });
 
   describe('Add Employee', function() {
