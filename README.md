@@ -62,9 +62,9 @@ ______________________________________________________________________________
 
 To run tests, run 
 
-" add command "
+" npm install "
 
-in the terminal.
+in the terminal command line.
   
 
 ## Credits 
