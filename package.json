@@ -1,17 +1,21 @@
-﻿{
+{
     "name": "employee-tracker",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
     "scripts": {
-      "test": "",
-      "start": "node server.js"
+        "test": "",
+        "start": "node server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "inquirer": "^8.2.4",
-      "pg": "^8.11.5"
+        "inquirer": "^8.2.4",
+        "pg": "^8.11.5"
+    },
+    "devDependencies": {
+        "chai": "^5.1.1",
+        "mocha": "^10.6.0"
     }
-  }
+}
