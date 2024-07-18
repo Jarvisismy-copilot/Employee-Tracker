@@ -37,11 +37,12 @@ Ensure you have Node.js, npm, Inquirer, and Postgres installed.
 
 ### Screenshots
 
-add
+<img width="837" alt="Screenshot 2024-07-17 at 9 11 23 PM" src="https://github.com/user-attachments/assets/a6c08b3a-2e2e-4e46-82ec-31d383287e88">
+
 
 ### Screenrecording
 
-[Employee Tracker](add)
+[Employee Tracker](https://drive.google.com/file/d/1TYjHLpqsEgR8Ytn-r0YX-adqDs4EW4bw/view?usp=sharing)
 
 ______________________________________________________________________________
 
@@ -53,7 +54,6 @@ ______________________________________________________________________________
 ## Built-With
 
 - JavaScript
-- Express js 
 - Node.js
 - Inquirer
 - Postgres

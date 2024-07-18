@@ -1,10 +1,12 @@
-﻿-- Insert Departments
-INSERT INTO department (id, name) VALUES
-(1, 'HR'),
-(2, 'Engineering'),
-(3, 'Marketing'),
-(4, 'Operations'),
-(5, 'Customer Relations');
+﻿\c employee_db;
+
+-- Insert Departments
+INSERT INTO department (name) VALUES
+('HR'),
+('Engineering'),
+('Marketing'),
+('Operations'),
+('Customer Relations');
 
 -- Insert Roles
 INSERT INTO role (title, salary, department_id)
