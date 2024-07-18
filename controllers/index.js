@@ -1,13 +1,16 @@
 ﻿const { Client } = require('pg');
 const inquirer = require('inquirer');
 
+require('dotenv').config();
+
 const client = new Client({
-  user: 'your_user',
-  host: 'localhost',
-  database: 'your_db',
-  password: 'your_password',
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
+
 
 async function updateEmployeeRole() {
   const employees = await client.query('SELECT id, first_name, last_name FROM employee');
@@ -62,7 +65,8 @@ async function main() {
     );
     console.log('Employee added successfully.');
   } else if (action === 'View Employees') {
-    const res = await client.query('SELECT * FROM employee');
+    const sql = `SELECT employee.id, employee.first_name AS "first name", employee.last_name AS "last name", role.title, department.name AS department, role.salary, manager.first_name || ' ' || manager.last_name AS manager FROM employee LEFT JOIN role ON employee.role_id = role.id LEFT JOIN department ON role.department_id = department.id LEFT JOIN employee manager ON manager.id = employee.manager_id`;
+    const res = await client.query(sql);
     console.table(res.rows);
   } else if (action === 'Update Employee Role') {
     await updateEmployeeRole();
@@ -78,12 +82,5 @@ main().catch(err => console.error(err));
 
 
 
-require('dotenv').config();
 
-const client = new Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-});
+

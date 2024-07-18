@@ -1,4 +1,7 @@
 ﻿-- departments table
+drop database if exists employee_db; 
+create database employee_db;
+
 CREATE TABLE department (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30) UNIQUE NOT NULL
